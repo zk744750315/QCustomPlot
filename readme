@@ -1,0 +1,19 @@
+QCustomPlot是一个用于绘图和数据可视化的Qt小组件。它没有多余的依赖关系，并且有完善的说明文档。该绘图库专注于制作美观、显示质量高的2D绘图和图表，并在实时可视化应用程序中有较高性能。
+
+本人用它主要是因为qwt配置起来实在太麻烦了。。。
+1. 从QCustomPlot官网下载源码及说明文档：https://www.qcustomplot.com/index.php/download
+我下载的是QCustomPlot 2.0.1，解压后里面包含有qcustomplot.h、qcustomplot.cpp和说明文档。
+2. 在VS中新建一个Qt项目，将qcustomplot.h、qcustomplot.cpp添加进解决方案：
+
+在MainWindow.h（本人命名为libsanalysis.h）中include一下“qcustomplot.h”。
+3. 打开UI文件，新建一个widget，并提升为qcustomplot：
+
+4. 更改项目属性：
+项目属性 -> 配置属性 -> 链接器 -> 输入 -> 附加依赖项”里面添加“Qt5PrintSupportd.lib”（Release模式下为Qt5PrintSupport.lib）；
+项目属性 -> 配置属性 -> 链接器 ->常规 ->附加库目录 ->“C:\Qt\5.13.0\msvc2017\lib”，这里得看项目具体使用的Qt版本，我用的是Qt5.13下32位的msvc2017。
+5. 运行结果如下：
+
+详见：https://blog.csdn.net/linga1995/article/details/105372081
+————————————————
+版权声明：本文为CSDN博主「灵噶Linga」的原创文章，遵循CC 4.0 BY-SA版权协议，转载请附上原文出处链接及本声明。
+原文链接：https://blog.csdn.net/linga1995/article/details/105372081
